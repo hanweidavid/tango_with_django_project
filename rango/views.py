@@ -4,10 +4,13 @@ from django.http import HttpResponse
 from rango.models import Category
 from rango.models import Page
 from rango.forms import CategoryForm, PageForm
+from django.shortcuts import redirect
+from rango.forms import PageForm
 from django.urls import reverse
 from rango.forms import UserForm, UserProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+
 
 
 def index(request):
@@ -146,7 +149,7 @@ def some_view(request):
 
 @login_required
 def restricted(request):
-    return render(request, 'rango/restricted.html')
+     return render(request, 'rango/restricted.html')
 
 
 @login_required
